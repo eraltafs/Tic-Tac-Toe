@@ -4,12 +4,14 @@ const http = require("http");
 const app = express();
 
 const server = http.createServer(app);
-const {Server} = require("socket.io");
+const socketio = require("socket.io");
 
-const io = new Server(server);
-
+const io =  socketio(server);
+io.on("connection",(socket)=>{
+    console.log("A new user joined")
+});
 
 
 server.listen(8080,()=>{
-    console.log("Server running at 8080");
-})
+    console.log("Server running at http://localhost:8080");
+});

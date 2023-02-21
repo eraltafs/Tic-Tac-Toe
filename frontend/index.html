@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoTic -An Online multiplayer Tic Tak Toe Game</title>
     <link rel="icon" href="./Screenshot_20230221_123858 (1).ico">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     
 </body>
+
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+<script>
+    const socket = io("http://localhost:8080",{transports:["websocket"]});
+</script>
+
 </html>
