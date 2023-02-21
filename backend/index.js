@@ -9,6 +9,9 @@ const socketio = require("socket.io");
 const io =  socketio(server);
 io.on("connection",(socket)=>{
     console.log("A new user joined")
+    socket.on("box",(msg)=>{
+        socket.emit("move",msg);
+    })
 });
 
 
