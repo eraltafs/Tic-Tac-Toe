@@ -11,7 +11,15 @@
 </head>
 
 <body>
-  
+  <div id="navbar">
+    <div id="logo">
+      <img src="https://i.ibb.co/WD8MjLt/Screenshot-20230221-123750.png" alt="" srcset="">
+    </div>
+    <div id="menu">
+      <button>Video call</button>
+      <button>Chat</button>
+    </div>
+  </div>
   <div id="inputdiv">
  
     <input type="text" id="player-name" class="inputitems" placeholder="Enter your name">
@@ -36,32 +44,15 @@
     </div>
   </div>
   <!-- ********************************************** -->
+  <div id="result">
+    <h1>Result: <span id="resulttext"></span></h1>
+  </div>
 </body>
 
 <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
   integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
-<script>
-  const socket = io("http://localhost:8080", { transports: ["websocket"] });
-
-  var count = 9   /* keeps in check the number of boxes left to be filled */
-  /* adding event listener to all boxes */
-  let data = document.querySelectorAll(".cell");
-  for (let i = 0; i < data.length; i++) {
-    data[i].addEventListener("click", () => {
-      count = count - 1;
-      socket.emit("box", data[i].id);
-    })
-  }
-
-
-  /* message comming from Server */
-  socket.on("move", (msg) => {
-    let e = document.querySelector("#" + msg);
-    e.innerHTML = "X"
-  })
-</script>
 
 
 
-
+<script src="./src/index.js"></script>
 </html>
