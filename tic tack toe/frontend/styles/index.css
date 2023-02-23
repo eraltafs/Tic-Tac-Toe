@@ -1,3 +1,7 @@
+body {
+  margin: 0%;
+  padding: 0%;
+}
 #board {
   display: flex;
   flex-direction: column;
@@ -8,6 +12,7 @@
   padding: 10px;
 
   margin: auto;
+  
   border-radius: 10px;
 }
 
@@ -34,13 +39,43 @@
 }
 #inputdiv {
   margin: auto;
-
+  margin-top: 20px;
   width: fit-content;
   padding: 10px;
 }
 
-.inputitems{
+.inputitems {
   padding: 5px;
   border-radius: 10px;
-
 }
+#navbar {
+  display: flex;
+  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  background-color: grey;
+  padding: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#navbar img {
+  width: 80px;
+  border-radius: 10%;
+}
+
+button{
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+button:hover{
+  background-color: rgb(241, 150, 13);
+}
+button:active{
+  background-color: rgb(7, 103, 2);
+}
+
