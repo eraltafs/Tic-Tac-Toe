@@ -1,0 +1,26 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .col-xs-4 {
+    width: 33.33%;
+    float: left;
+    border: 1px solid #ccc;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+  }
+  
+  .btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
