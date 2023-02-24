@@ -1,58 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoTic -An Online multiplayer Tic Tak Toe Game</title>
+    <link rel="icon" href="./Screenshot_20230221_123858 (1).ico" />
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoTic -An Online multiplayer Tic Tak Toe Game</title>
-  <link rel="icon" href="./Screenshot_20230221_123858 (1).ico">
-  <link rel="stylesheet" href="./styles/index.css">
-</head>
-
-<body>
-  <div id="navbar">
-    <div id="logo">
-      <img src="https://i.ibb.co/WD8MjLt/Screenshot-20230221-123750.png" alt="" srcset="">
+  <body>
+    <div id="navbar">
+      <div id="logo">
+        <img
+          src="https://i.ibb.co/WD8MjLt/Screenshot-20230221-123750.png"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div id="menu">
+        <button>Video call</button>
+        <button>Chat</button>
+      </div>
     </div>
-    <div id="menu">
-      <button>Video call</button>
-      <button>Chat</button>
-    </div>
-  </div>
-  <div id="inputdiv">
- 
-    <input type="text" id="player-name" class="inputitems" placeholder="Enter your name">
-    <button id="start-game" class="inputitems">Start Game</button>
-  </div>
-  <!-- ***************** Board of Game*********** -->
-  <div id="board">
-    <div class="row">
-      <div class="cell" id="a"></div>
-      <div class="cell" id="b"></div>
-      <div class="cell" id="c"></div>
-    </div>
-    <div class="row">
-      <div class="cell" id="d"></div>
-      <div class="cell" id="e"></div>
-      <div class="cell" id="f"></div>
-    </div>
-    <div class="row">
-      <div class="cell" id="g"></div>
-      <div class="cell" id="h"></div>
-      <div class="cell" id="i"></div>
-    </div>
-  </div>
-  <!-- ********************************************** -->
-  <div id="result">
-    <h1>Result: <span id="resulttext"></span></h1>
-  </div>
-</body>
+    <!-- <div id="inputdiv"> -->
+    <!-- <input type="text" id="player-name" class="inputitems" placeholder="Enter your name"> -->
+    <!-- <button id="start-game" class="inputitems">Start Game</button> -->
+    <!-- </div> -->
+    <!-- ***************** Board of Game*********** -->
+    <!-- <div id="main">
+      <div></div>
+      <div id="board">
+        <div class="row">
+          <div class="cell" id="a"></div>
+          <div class="cell" id="b"></div>
+          <div class="cell" id="c"></div>
+        </div>
+        <div class="row">
+          <div class="cell" id="d"></div>
+          <div class="cell" id="e"></div>
+          <div class="cell" id="f"></div>
+        </div>
+        <div class="row">
+          <div class="cell" id="g"></div>
+          <div class="cell" id="h"></div>
+          <div class="cell" id="i"></div>
+        </div>
+      </div>
+      <div>
+        <div id="chatsection"></div>
+        <form id="chat-in">
+          <input type="text" id="chatinput" />
+          <input type="submit" value="send" id="chatsubmit" />
+        </form>
+      </div>
+    </div> -->
 
-<script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
-  integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <!-- ********************************************** -->
+    <!-- <div id="result">
+      <h1>Result: <span id="resulttext"></span></h1>
+    </div> -->
 
+    <div id="container">
+      <div class="cont"></div>
+      <div class="cont">
+        <div id="board">
+          <div class="row">
+            <div class="cell" id="a"></div>
+            <div class="cell" id="b"></div>
+            <div class="cell" id="c"></div>
+          </div>
+          <div class="row">
+            <div class="cell" id="d"></div>
+            <div class="cell" id="e"></div>
+            <div class="cell" id="f"></div>
+          </div>
+          <div class="row">
+            <div class="cell" id="g"></div>
+            <div class="cell" id="h"></div>
+            <div class="cell" id="i"></div>
+          </div>
+        </div>
+      </div>
+      <div class="cont">
+        <div id="display">
 
+        
+        </div>
+        <form >
+          <input type="text" id="chatinput" />
+          <input type="submit" value="send" id="chatsubmit" />
+        </form>
+      </div>
+    </div>
+  </body>
 
-<script src="./src/index.js"></script>
+  <script
+    src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+    integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="./src/index.js"></script>
 </html>
