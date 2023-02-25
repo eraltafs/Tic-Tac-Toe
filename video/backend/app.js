@@ -15,7 +15,7 @@ app.get("/",(req,res)=>{
     res.sendFile(__dirname+`/public/index.html`);
 })
 
-let connectedPeers = [];
+let connectedPeers = []
 
 io.on("connection",(socket)=>{
    connectedPeers.push(socket.id);
