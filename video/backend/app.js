@@ -8,14 +8,14 @@ const app = express();
 const server = http.createServer(app)
 const io = require("socket.io")(server)
 
-app.use(express.static("public"));
-
+// app.use(express.static("public"));
+// 
 
 app.get("/",(req,res)=>{
     res.sendFile(__dirname+`/public/index.html`);
 })
 
-let connectedPeers = [];
+let connectedPeers = []
 
 io.on("connection",(socket)=>{
    connectedPeers.push(socket.id);

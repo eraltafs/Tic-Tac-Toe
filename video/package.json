@@ -1,21 +1,22 @@
 {
-  "name": "backend",
+  "name": "video",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon chat.js"
+    "server":"nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "moment": "^2.29.4",
-    "mongoose": "^6.9.2",
     "nodemon": "^2.0.20",
-    "socket.io": "^4.6.1"
+    "peer": "^0.6.1",
+    "socket.io": "^4.6.1",
+    "uuid": "^9.0.0"
   }
 }

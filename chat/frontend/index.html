@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Demo</title>
+    <style>
+        body{
+            background-image: url("jerry-zhang-nxu_VUcBVdA-unsplash.jpg");
+            background-repeat: no-repeat;
+        }
+        .popup {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			background-color: white;
+			border: 1px solid black;
+			z-index: 1;
+		}
+
+        .main_body{
+           display: none;
+           top: 50%;
+		   left: 50%;
+           position: fixed;
+           transform: translate(-50%, -50%);
+           z-index: 1;
+           width: 600px;
+           height: 400px;
+           border: 1px solid black;
+           background-color: rgb(114, 114, 231);
+        }
+
+        .message_left{
+            text-align: left;
+            width: fit-content;
+            padding: 10px;
+            margin: 10px;
+            align-self: flex-start;
+            border-radius: 20px 0px 20px 20px;
+            background-color: rgb(245, 250, 250);
+        }
+
+        .message_right{
+            text-align: right;
+            width: fit-content;
+            align-self: flex-end;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 20px 0px 20px 20px;
+            background-color: rgb(245, 250, 250);
+        }
+        .chat_display{
+            width: 100%;
+            height: 90%;
+            overflow-y:auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .write_chat{
+            width: 100%;
+            height: 10%;
+            border: 1px solid orange;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .message{
+           border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_body">
+
+        <div class="chat_display">
+           
+        </div>
+        <div class="write_chat">
+            <input class="message" placeholder="Write message here" type="text">
+            <button class="send">Send</button>
+        </div>
+    </div>
+    
+    <div id="popup" class="popup">
+		<h2>Enter Your Name TO Proceed</h2>
+		<input class="name" type="text" placeholder="Enter Your name here" >
+		<button onclick="hidePopup()">Submit Name</button>
+	</div>
+</body>
+
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+<script>
+    const socket = io("http://localhost:3500",{transports:["websocket"]});
+     
+    var name;
+     
+    document.querySelector(".send").addEventListener("click",()=>{
+        var user_name = name;
+        let msg = document.querySelector(".message").value;
+        document.querySelector(".message").value="";
+        let obj = {};
+        obj.name= user_name;
+        obj.msg = msg;
+        socket.emit("msg_from_client",obj);
+    })
+
+    socket.on("msg_from_server",(data)=>{
+        console.log(data);
+        display(data);
+    })
+
+
+
+
+    function display(data){
+        let div = document.createElement("div");
+        if(name!=data.name){
+            div.classList.add("message_left");
+        }
+        else {
+           div.classList.add("message_right"); 
+        }
+        
+        let d_name = document.createElement("p");
+        d_name.innerText=`${data.name}`;
+        d_name.innerHTML+=`<span> ${data.time}</span>`;
+        let d_msg = document.createElement("h3");
+        d_msg.classList.add("actual_msg")
+        d_msg.innerText=data.msg;
+        div.append(d_name,d_msg);
+        
+        document.querySelector(".chat_display").append(div);
+        scrollToBottom()
+    }
+
+
+    function showPopup() {
+			document.getElementById("popup").style.display = "block";
+		}
+
+		function hidePopup() {
+            name = document.querySelector(".name").value;
+            document.querySelector(".main_body").style.display="block";
+			document.getElementById("popup").style.display = "none";
+		}
+    
+
+    socket.on("user_disconnect",(msg)=>{
+        console.log(msg)
+    })
+
+
+    const element = document.querySelector(".chat_display")
+
+    // Function to scroll the element to the bottom
+    function scrollToBottom() {
+    element.scrollTop = element.scrollHeight;
+    }
+
+
+    let mes = document.querySelector(".message");
+    mes.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        var user_name = name;
+        let msg = document.querySelector(".message").value;
+        document.querySelector(".message").value="";
+        let obj = {};
+        obj.name= user_name;
+        obj.msg = msg;
+        socket.emit("msg_from_client",obj);
+    }
+    });
+
+    showPopup();
+
+</script>
+</html>
