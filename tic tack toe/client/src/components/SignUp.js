@@ -8,7 +8,7 @@ function SignUp({setIsAuth}) {
 
   const sign = ()=>{
 
-    Axios.post("http://localhost:3002/signup",user).then(res=>{
+    Axios.post("https://dead-pink-parrot-vest.cyclic.app/signup",user).then(res=>{
       const {token,userId,firstName,lastName,username,hashedPassword} = res.data
 
       cookies.set('token',token);

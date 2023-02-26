@@ -7,7 +7,7 @@ function Login({setIsAuth}) {
     const [password,setPassword] = useState("");
     const login = ()=>{
 
-      Axios.post("http://localhost:3002/login",{
+      Axios.post("https://dead-pink-parrot-vest.cyclic.app/login",{
         username,
         password
       }).then(res=>{
