@@ -1,20 +1,23 @@
 const express = require("express");
 const cors = require("cors");
+const jwt = require("jsonwebtoken");
 const { StreamChat } = require("stream-chat");
 const { v4 } = require("uuid");
 const app = express();
 const bcrypt = require("bcrypt");
+const { connection } = require("./config/db");
+const { userModel } = require("./models/user.models");
+require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
 
-const api_key = "bj2qgrfpgdsq";
-const api_secret =
-  "45vxcgnyweewagjmaczx79s8mndshcrnex6ytwg42eagkrhzmjqpmt5dqhh4hgjm";
 
-const serverClient = StreamChat.getInstance(api_key, api_secret);
+
+const serverClient = StreamChat.getInstance(process.env.api_key, process.env.api_secret);
 
 app.post("/signup", async (req, res) => {
+  
   try {
     const { firstName, lastName, username, password } = req.body;
     const userId = v4();
@@ -30,6 +33,7 @@ app.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
     const { users } = await serverClient.queryUsers({ name: username });
+    console.log(users)
 
     if (users.length === 0) {
       return res.json({ message: "user not found" });
@@ -52,10 +56,23 @@ app.post("/login", async (req, res) => {
       });
     }
   } catch (error) {
-    res.json(error);
+    console.log(error.message);
+    // res.json(error);
   }
 });
+app.get("/:username", async(req,res)=>{
+  const {username} = req.params
+  res.send(await userModel.findOne({username}))
+})
 
-app.listen(3002, () => {
+
+
+app.listen(3002, async () => {
+  try {
+    await connection;
+    console.log("connected");
+  } catch (error) {
+    console.log(error);
+  }
   console.log("server is running on port 3002");
 });
