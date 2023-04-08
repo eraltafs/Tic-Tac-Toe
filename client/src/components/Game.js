@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Board from "./Board";
+import { alertMsg } from "./alertmsg.component";
+import "./alert.css"
 
 import { Window, MessageList, MessageInput } from "stream-chat-react";
 import "./chat.css";
@@ -47,8 +49,8 @@ function Game({ channel, setChannel }) {
       </button> */}
 
       {result.state === "won" &&
-        alert(`${result.winner} Won The Game`)}
-      {result.state === "tie" && alert(` Game Tie`)}
+        alertMsg(`${result.winner} Won The Game`,`success`)}
+      {result.state === "tie" && alertMsg(` Game Tie`,`success`)}
     </div>
   );
 }

@@ -54,6 +54,8 @@ app.post("/login", async (req, res) => {
         username,
         userId: users[0].id,
       });
+    }else{
+      return res.json({ message: "user not found" });
     }
   } catch (error) {
     console.log(error.message);

@@ -18,8 +18,20 @@
     overflow: hidden;
     overflow-y: scroll;
   }
-
-
+.str-chat__message--me{
+  background-color: #10f600;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 90px;
+}
+.str-chat__message--other{
+  background-color: #5f615f;
+  padding: 10px;
+  border-radius: 10px;
+}
+.str-chat__message-simple-name{
+  display: none;
+}
   .str-chat__list::-webkit-scrollbar {
     width: 5px;
     border-radius: 10px;
@@ -39,10 +51,8 @@
   }
   .str-chat__list li {
     list-style-type: none;
-    background-color: rgb(39, 25, 25);
     margin-top: 10px;
     font-weight: bold;
-    color: white;
     border-radius: 6px;
     display: flex;
     align-items: center;

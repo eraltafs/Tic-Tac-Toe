@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import Cookies from "universal-cookie";
-
+import { alertMsg } from "./alertmsg.component";
+import "./alert.css"
 function SignUp({ setIsAuth }) {
   const cookies = new Cookies();
   const [user, setUser] = useState(null);
@@ -14,7 +15,7 @@ function SignUp({ setIsAuth }) {
         !user.username ||
         !user.password
       ) {
-        alert("please fill all details");
+        alertMsg("please fill all details","error");
       } else {
         Axios.post("https://beautiful-tick-leotard.cyclic.app/signup", user).then((res) => {
           const {
@@ -44,7 +45,7 @@ function SignUp({ setIsAuth }) {
         });
       }
     } else {
-      alert("form can't be empty");
+      alertMsg("form can't be empty","error");
     }
   };
   return (
