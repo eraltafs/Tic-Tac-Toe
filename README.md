@@ -75,4 +75,4 @@ npm start
 
 ## Screen Shots
 ## :small_blue_diamond: Homepage
-![Home](https://user-images.githubusercontent.com/112304655/218240822-01f3eda4-c05b-4aaa-8860-175cce5022d7.png)
+![Home]()
