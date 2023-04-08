@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import Cookies from "universal-cookie";
+import { alertMsg } from "./alertmsg.component";
+import "./alert.css"
 function Login({setIsAuth}) {
    const cookies = new Cookies();
     const [username,setUsername] = useState("");
@@ -12,7 +14,7 @@ function Login({setIsAuth}) {
         password
       }).then(res=>{
         if(username===""||password===""){
-          alert("please fill all details")
+          alertMsg("please fill all details","error")
         }else{
 
           const {token,firstName,lastName,username,userId} = res.data;
@@ -25,7 +27,7 @@ function Login({setIsAuth}) {
             setIsAuth(true);  
     
           }else{
-            alert("user not found")
+            alertMsg("user not found","fail")
           }
         }
 

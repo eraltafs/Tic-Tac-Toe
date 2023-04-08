@@ -6,10 +6,10 @@ body {
   height: 90vh;
   margin: auto;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 
 #loding-img {
   width: 50%;
@@ -84,7 +84,7 @@ body {
 .login {
   margin: auto;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 40px;
 }
 label {
   margin-bottom: 10px;
@@ -258,4 +258,12 @@ h4 {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+}
+
+
+@media (max-width: 600px)  {
+  #loginsignup{
+    display: flex;
+    flex-direction: column;
+  }
 }
