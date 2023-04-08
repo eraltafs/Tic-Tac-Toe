@@ -8,7 +8,7 @@ import { useState } from "react";
 import JoinGame from "./components/JoinGame";
 
 function App() {
-  const api_key = "bj2qgrfpgdsq";
+  const api_key = "8g5z6vjcf3r4";
   const cookies = new Cookies();
   const token = cookies.get("token");
   const [isAuth, setIsAuth] = useState(false);

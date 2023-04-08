@@ -7,18 +7,28 @@ function Login({setIsAuth}) {
     const [password,setPassword] = useState("");
     const login = ()=>{
 
-      Axios.post("https://dead-pink-parrot-vest.cyclic.app/login",{
+      Axios.post("https://beautiful-tick-leotard.cyclic.app/login",{
         username,
         password
       }).then(res=>{
-      const {token,firstName,lastName,username,userId} = res.data;
+        if(username===""||password===""){
+          alert("please fill all details")
+        }else{
 
-      cookies.set('token',token);
-      cookies.set('userId',userId);
-      cookies.set('username',username);
-      cookies.set('firstName',firstName);
-      cookies.set('lastName',lastName);
-      setIsAuth(true);  
+          const {token,firstName,lastName,username,userId} = res.data;
+          if(token&&firstName&&lastName&&username&&userId){
+            cookies.set('token',token);
+            cookies.set('userId',userId);
+            cookies.set('username',username);
+            cookies.set('firstName',firstName);
+            cookies.set('lastName',lastName);
+            setIsAuth(true);  
+    
+          }else{
+            alert("user not found")
+          }
+        }
+
     });
 
     };
