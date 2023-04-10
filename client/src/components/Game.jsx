@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import Board from "./Board";
 import { alertMsg } from "./alertmsg.component";
 import "./alert.css"
-
 import { Window, MessageList, MessageInput } from "stream-chat-react";
 import "./chat.css";
+
+// loading screen and checking for user joined or not
 function Game({ channel, setChannel }) {
   const [playersJoined, setPlayersJoined] = useState(
     channel.state.watcher_count === 2
@@ -16,8 +17,9 @@ function Game({ channel, setChannel }) {
   });
   if (!playersJoined) {
     return (
+      // loading Image and text
       <div id="loding-div">
-        <img
+        <img alt="loading"
           id="loding-img"
           src="https://media.giphy.com/media/xTkcEQACH24SMPxIQg/giphy.gif"
         ></img>
@@ -26,8 +28,11 @@ function Game({ channel, setChannel }) {
     );
   }
   return (
+    // setting game and chat screen 
     <div className="gameContainer">
+      {/* placing tic tac toe board */}
       <Board result={result} setResult={setResult} />
+      {/* placing chat screen */}
       <Window>
         <MessageList
           disableDateSeparator
@@ -48,6 +53,8 @@ function Game({ channel, setChannel }) {
         Leave Game
       </button> */}
 
+    
+      {/* sending win message */}
       {result.state === "won" &&
         alertMsg(`${result.winner} Won The Game`,`success`)}
       {result.state === "tie" && alertMsg(` Game Tie`,`success`)}

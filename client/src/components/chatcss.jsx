@@ -3,6 +3,7 @@ import { ChatAutoComplete, useMessageInputContext } from "stream-chat-react";
 
 function CustomInput() {
   const { handleSubmit } = useMessageInputContext();
+  // chat UI
   return (
     <div className="str-chat__input-flat str-chat__input-flat--send-button-active">
       <div className="str-chat__input-flat-wrapper">

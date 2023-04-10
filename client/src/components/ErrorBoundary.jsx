@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+// error handling function
 function ErrorFallback(props) {
   const navigate = useNavigate();
 
   return (
-    <div style={{ color: "white" }}>
+    <div style={{ color: "white", margin:"auto", width:"60%", justifyContent:"center", alignItems:"center"}}>
       <h1>Something went wrong</h1>
       <div>
-        <h3 onClick={() => navigate("/")}>Navigate to homepage</h3>
+        <h3>Navigate to homepage</h3>
+        <button onClick={() => navigate("/")}>Home</button>
       </div>
     </div>
   );
 }
 
+
+// class for handle the error
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);

@@ -15,6 +15,7 @@ function SignUp({ setIsAuth }) {
         !user.username ||
         !user.password
       ) {
+        // if form is empty show alert 
         alertMsg("please fill all details","error");
       } else {
         Axios.post("https://beautiful-tick-leotard.cyclic.app/signup", user).then((res) => {
@@ -45,10 +46,12 @@ function SignUp({ setIsAuth }) {
         });
       }
     } else {
+      // if form is empty show alert 
       alertMsg("form can't be empty","error");
     }
   };
   return (
+    // signup form
     <div className="signUp">
       <label>Sign Up</label>
       <input

@@ -15,7 +15,9 @@ function App() {
   const token = cookies.get("token");
   const [isAuth, setIsAuth] = useState(false);
   const client = StreamChat.getInstance(api_key);
+  
 
+  // on click logout delete cookies and return to home or login
   const logout = () => {
     cookies.remove("token");
     cookies.remove("userId");
@@ -27,6 +29,7 @@ function App() {
     client.disconnectUser();
     setIsAuth(false);
   };
+  // if get token in cookie show the create room page
 
   if (token) {
     client
@@ -46,6 +49,7 @@ function App() {
   }
 
   return (
+    // error handling by errror boundary
     <ErrorBoundary>
       <div className="App">
         {isAuth ? (

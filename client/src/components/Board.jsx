@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useChannelStateContext, useChatContext } from "stream-chat-react";
 import Square from "./Square";
 import { Patterns } from "./winningPattern";
+
+// setting board to ui
 function Board({ result, setResult }) {
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
   const [player, setPlayer] = useState("X");
@@ -14,6 +16,7 @@ function Board({ result, setResult }) {
     checkIfTie();
     checkWin();
   }, [board]);
+  // choose a box and set X or O
   const chooseSquare = async (square) => {
     if (turn === player && board[square] === "") {
       setTurn(player === "X" ? "O" : "X");
@@ -32,6 +35,7 @@ function Board({ result, setResult }) {
       );
     }
   };
+  // checking for winning from winnig pattern 
 
   const checkWin = () => {
     Patterns.forEach((currPattern) => {
@@ -80,6 +84,7 @@ function Board({ result, setResult }) {
   });
 
   return (
+    // board UI
     <div className="board">
       <div className="row">
         <Square

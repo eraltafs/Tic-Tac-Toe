@@ -1,3 +1,4 @@
+// making customised alert
 function alertMsg(message, status) {
     if (document.getElementById("alertDiv") != undefined) {
       document.getElementById("alertDiv").remove();

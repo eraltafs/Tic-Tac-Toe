@@ -2,16 +2,20 @@ import React, { useState } from "react";
 import { useChatContext, Channel } from "stream-chat-react";
 import CustomInput from "./chatcss";
 import Game from "./Game";
+import { alertMsg } from "./alertmsg.component";
+import "./alert.css"
 
+// create game and chat room or channel 
 function JoinGame() {
   const [rivalUsername, setRivalUsername] = useState("");
   const { client } = useChatContext();
   const [channel, setChannel] = useState(null);
   const createChannel = async () => {
+  // checking for user is registerd or not
     const response = await client.queryUsers({ name: { $eq: rivalUsername } });
 
     if (response.users.length === 0) {
-      alert("User not Found");
+      alertMsg("User not Found","fail");
       return;
     }
 
@@ -25,6 +29,7 @@ function JoinGame() {
 
   return (
     <>
+    {/* checking user joined or not if joined then show game else show create room page */}
       {channel ? (
         <Channel channel={channel} Input={CustomInput}>
           <Game channel={channel} setChannel={setChannel} />
