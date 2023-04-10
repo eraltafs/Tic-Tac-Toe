@@ -6,7 +6,8 @@ import { Chat } from "stream-chat-react";
 import Cookies from "universal-cookie";
 import { useState } from "react";
 import JoinGame from "./components/JoinGame";
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   const api_key = "8g5z6vjcf3r4";
@@ -45,20 +46,26 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {isAuth ? (
-        <Chat client={client}>
-          <button id="logout-btn" onClick={logout}>Logout</button>
-          <JoinGame />
-        </Chat>
-      ) : (<>
-        <div id="loginsignup" style={{display:"flex", gap:"40px"}}>
-          <SignUp setIsAuth={setIsAuth} />
-          <Login setIsAuth={setIsAuth} />
-        </div>
-      </>
-      )}
-    </div>
+    <ErrorBoundary>
+      <div className="App">
+        {isAuth ? (
+          <Chat client={client}>
+            <button id="logout-btn" onClick={logout}>
+              Logout
+            </button>
+            <JoinGame />
+          </Chat>
+        ) : (
+          <>
+            <div id="loginsignup" style={{ display: "flex", gap: "40px" }}>
+              <SignUp setIsAuth={setIsAuth} />
+              <Login setIsAuth={setIsAuth} />
+            </div>
+          </>
+        )}
+      </div>
+
+    </ErrorBoundary>
   );
 }
 

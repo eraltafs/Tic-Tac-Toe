@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useChannelStateContext, useChatContext } from "stream-chat-react";
 import Square from "./Square";
-import { Patterns } from "../components/winningPattern";
+import { Patterns } from "./winningPattern";
 function Board({ result, setResult }) {
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
   const [player, setPlayer] = useState("X");
