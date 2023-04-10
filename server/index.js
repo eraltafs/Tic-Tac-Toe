@@ -1,13 +1,10 @@
 const express = require("express");
 const cors = require("cors");
-const jwt = require("jsonwebtoken");
+
 const { StreamChat } = require("stream-chat");
 const { v4 } = require("uuid");
 const app = express();
-const bcrypt = require("bcrypt");
-const { connection } = require("./config/db");
-const { userModel } = require("./models/user.models");
-require("dotenv").config();
+
 
 app.use(cors());
 app.use(express.json());
@@ -70,11 +67,5 @@ app.get("/:username", async(req,res)=>{
 
 
 app.listen(3002, async () => {
-  try {
-    await connection;
-    console.log("connected");
-  } catch (error) {
-    console.log(error);
-  }
   console.log("server is running on port 3002");
 });
