@@ -13,24 +13,31 @@ app.use(express.json());
 
 const serverClient = StreamChat.getInstance(process.env.api_key, process.env.api_secret);
 
+
+// signup route 
 app.post("/signup", async (req, res) => {
   
   try {
     const { firstName, lastName, username, password } = req.body;
     const userId = v4();
+    // creating hash password
     const hashedPassword = await bcrypt.hash(password, 5);
+    // genrating tokens
     const token = serverClient.createToken(userId);
+    // sending details to frontend or client
     res.json({ token, userId, firstName, lastName, username, hashedPassword });
   } catch (error) {
     res.json(error);
   }
 });
 
+// login route
+
 app.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
+    // find user
     const { users } = await serverClient.queryUsers({ name: username });
-    console.log(users)
 
     if (users.length === 0) {
       return res.json({ message: "user not found" });
@@ -38,6 +45,7 @@ app.post("/login", async (req, res) => {
 
     const token = serverClient.createToken(users[0].id);
 
+    // checking password
     const passwordMatch = await bcrypt.compare(
       password,
       users[0].hashedPassword
@@ -59,11 +67,8 @@ app.post("/login", async (req, res) => {
     // res.json(error);
   }
 });
-app.get("/:username", async(req,res)=>{
-  const {username} = req.params
-  res.send(await userModel.findOne({username}))
-})
 
+// listening to the server
 
 
 app.listen(3002, async () => {
