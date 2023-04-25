@@ -57,6 +57,7 @@ npm start
   - "nodemon": "^2.0.20",
   - "stream-chat": "^8.4.1",
   - "uuid": "^9.0.0"
+  - "jsonwebtoken": "^9.0.0"
 
 
 
