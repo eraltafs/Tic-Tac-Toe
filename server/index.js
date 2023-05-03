@@ -1,5 +1,6 @@
-const express =  require("express");
+const express = require("express");
 const cors = require("cors");
+const bcrypt = require("bcrypt")
 require("dotenv").config();
 
 const { StreamChat } = require("stream-chat");
