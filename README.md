@@ -3,7 +3,7 @@
 tic tac toe game
 
 > Frontend Deployed Link : https://genuine-granita-f5d735.netlify.app/ <br/>
-> Backend Deployed Link : https://beautiful-tick-leotard.cyclic.app/
+> Backend Deployed Link : https://tic-tac-toe-9o7w.onrender.com
 
 This GitHub repository contains a real-time, two-player Tic Tac Toe game with a built-in chat feature. Players can create a room, invite others to join using a unique code, and start playing the classic game of Tic Tac Toe. The game board is updated in real-time, allowing both players to see the moves of their opponent as they happen. The chat feature allows players to communicate with each other during the game. The code is written in JavaScript and uses Socket.io for real-time communication. This is a great project for anyone looking to build a simple multiplayer game and learn about real-time web development.
 ### :snowflake: This project was completed in 4 days with 2 team members
