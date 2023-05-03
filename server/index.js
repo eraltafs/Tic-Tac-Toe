@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 
 const { StreamChat } = require("stream-chat");
 const { v4 } = require("uuid");
@@ -10,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 
-
+// creating server
 const serverClient = StreamChat.getInstance(process.env.api_key, process.env.api_secret);
 
 
@@ -31,12 +32,10 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-// login route
-
 app.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
-    // find user
+    // find users
     const { users } = await serverClient.queryUsers({ name: username });
 
     if (users.length === 0) {
