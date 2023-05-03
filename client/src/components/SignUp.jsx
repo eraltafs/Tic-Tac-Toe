@@ -18,7 +18,7 @@ function SignUp({ setIsAuth }) {
         // if form is empty show alert 
         alertMsg("please fill all details","error");
       } else {
-        Axios.post("https://beautiful-tick-leotard.cyclic.app/signup", user).then((res) => {
+        Axios.post("https://tic-tac-toe-9o7w.onrender.com/signup", user).then((res) => {
           const {
             token,
             userId,

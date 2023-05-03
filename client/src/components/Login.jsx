@@ -11,7 +11,7 @@ function Login({ setIsAuth }) {
   // login functionality
   const login = () => {
     //checking for user registered or not
-    Axios.post("https://beautiful-tick-leotard.cyclic.app/login", {
+    Axios.post("https://tic-tac-toe-9o7w.onrender.com/login", {
       username,
       password,
     }).then((res) => {
