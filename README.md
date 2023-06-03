@@ -79,15 +79,15 @@ npm start
 
 ## :small_blue_diamond: Homepage
 
-![Home](https://github.com/eraltafs/Tic-Tac-Toe/blob/main/.github/images/home.png?raw=true)
+![Home](https://i.ibb.co/bs44vK9/home.png)
 
 
 ## :small_blue_diamond: create room
-![create room](https://github.com/eraltafs/Tic-Tac-Toe/blob/main/.github/images/create%20room.png?raw=true)
+![create room](https://i.ibb.co/PG5mk2P/create-room.png)
 
 ## :small_blue_diamond: waiting
-![waiting](https://github.com/eraltafs/Tic-Tac-Toe/blob/main/.github/images/waiting%20page.png?raw=true)
+![waiting](https://i.ibb.co/3hTfdNw/waiting-page.png)
 ## :small_blue_diamond: board
-![board](https://github.com/eraltafs/Tic-Tac-Toe/blob/main/.github/images/chat%20and%20board.png?raw=true)
+![board](https://i.ibb.co/hDXVkjW/chat-and-boards.png)
 
 
