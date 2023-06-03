@@ -79,15 +79,15 @@ npm start
 
 ## :small_blue_diamond: Homepage
 
-![Home](https://github.com/eraltafs/pathetic-rhythm-8967/blob/fw21_1247_day-1/.github/images/home.png?raw=true)
+![Home](https://github.com/eraltafs/Tic-Tac-Toe/blob/fw21_1247_day-1/.github/images/home.png?raw=true)
 
 
 ## :small_blue_diamond: create room
-![create room](https://github.com/eraltafs/pathetic-rhythm-8967/blob/fw21_1247_day-1/.github/images/create%20room.png?raw=true)
+![create room](https://github.com/eraltafs/Tic-Tac-Toe/blob/fw21_1247_day-1/.github/images/create%20room.png?raw=true)
 
 ## :small_blue_diamond: waiting
-![waiting](https://github.com/eraltafs/pathetic-rhythm-8967/blob/fw21_1247_day-1/.github/images/waiting%20page.png?raw=true)
+![waiting](https://github.com/eraltafs/Tic-Tac-Toe/blob/fw21_1247_day-1/.github/images/waiting%20page.png?raw=true)
 ## :small_blue_diamond: board
-![board](https://github.com/eraltafs/pathetic-rhythm-8967/blob/fw21_1247_day-1/.github/images/chat%20and%20board.png?raw=true)
+![board](https://github.com/eraltafs/Tic-Tac-Toe/blob/fw21_1247_day-1/.github/images/chat%20and%20board.png?raw=true)
 
 
