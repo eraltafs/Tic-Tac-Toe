@@ -10,7 +10,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
-  const api_key = "78652f73yqhe";
+  const api_key = process.env.api_key
   const cookies = new Cookies();
   const token = cookies.get("token");
   const [isAuth, setIsAuth] = useState(false);
