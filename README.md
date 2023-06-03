@@ -91,6 +91,6 @@ npm start
 ![board](https://i.ibb.co/hDXVkjW/chat-and-boards.png)
 
 ## :small_blue_diamond: Execution Video
-[![Video](https://i.ibb.co/3hTfdNw/waiting-page.png)](https://www.veed.io/view/396b947f-0845-4ed5-b32a-ee3343a6b96c)
+[![Video](https://i.ibb.co/3hTfdNw/waiting-page.png)](https://github.com/eraltafs/Tic-Tac-Toe/assets/43698833/28e953d1-0d63-440c-8571-959551f600ba)
 
 
